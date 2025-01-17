@@ -10,9 +10,7 @@ const app = express();
 app.use(express.json());
 app.use(cors(
   {
-    origin: ["https://scrapster-frontend.vercel.app"],
-    methods: ["POST", "GET", "PUT", "DELETE"],
-    credentials: true
+    origin: ["*"]
   }
 ));
 
