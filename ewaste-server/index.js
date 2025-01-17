@@ -6,6 +6,7 @@ import TicketRouter from "./Routes/ticketRouter.js";
 import dotenv from "dotenv";
 dotenv.config();
 
+dbconnect();
 const app = express();
 app.use(express.json());
 app.use(cors(
@@ -20,7 +21,6 @@ app.get("/", (req, res) => {
   res.send("Hello World");
 });
 
-dbconnect();
 
 app.use("/user", UserRouter);
 app.use("/ticket", TicketRouter);
