@@ -9,9 +9,11 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 app.use(cors(
-  {
-    origin: ["*"]
-  }
+  // {
+  //   origin: ["https://scrapster-frontend.vercel.app"],
+  //   methods: ["POST", "GET", "PUT", "DELETE"],
+  //   credentials: true
+  // }
 ));
 
 app.get("/", (req, res) => {
