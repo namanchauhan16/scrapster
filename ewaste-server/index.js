@@ -13,9 +13,12 @@ app.use(cors(
   {
     origin: ["https://scrapster-frontend.vercel.app"],
     methods: ["POST", "GET", "PUT", "DELETE"],
-    credentials: true
+    credentials: true,
+    allowedHeaders: ['Content-Type', 'Authorization']
   }
 ));
+
+app.options('*', cors());
 
 app.get("/", (req, res) => {
   res.send("Hello World");
