@@ -19,7 +19,7 @@ const Login = () => {
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     try {
-      const res = await Axios.post("http://localhost:3000/user/login", {
+      const res = await Axios.post("https://scrapster-api.vercel.app/user/login", {
         email: user.email,
         password: user.password,
       });

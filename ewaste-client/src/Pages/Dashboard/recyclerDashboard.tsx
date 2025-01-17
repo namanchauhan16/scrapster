@@ -53,7 +53,7 @@ const RecyclerDashboard = () => {
                 const token = localStorage.getItem('token');
 
                 if (token) {
-                    const response = await Axios.get('http://localhost:3000/ticket/notification', {
+                    const response = await Axios.get('https://scrapster-api.vercel.app/ticket/notification', {
                         headers: {
                             Authorization: `Bearer ${token}`
                         }

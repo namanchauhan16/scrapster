@@ -56,7 +56,7 @@ const Registerpage = () => {
         }
 
         try {
-            await Axios.post('http://localhost:3000/user/register', {
+            await Axios.post('https://scrapster-api.vercel.app/user/register', {
                 name: user.name,
                 email: user.email,
                 phone: user.phone,

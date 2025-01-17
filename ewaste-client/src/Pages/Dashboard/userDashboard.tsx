@@ -50,7 +50,7 @@ const UserDashboard = () => {
     const handleDelete = async () => {
         try {
             const email = user?.email;
-            const res = await Axios.delete("http://localhost:3000/user/delete", {
+            const res = await Axios.delete("https://scrapster-api.vercel.app/user/delete", {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('token')}`
                 },
@@ -71,7 +71,7 @@ const UserDashboard = () => {
             try {
                 const userId = localStorage.getItem('uid');
                 if (userId && localStorage.getItem('token')) {
-                    const res = await Axios.get("http://localhost:3000/ticket/getUserTicket", {
+                    const res = await Axios.get("https://scrapster-api.vercel.app/ticket/getUserTicket", {
                         headers: {
                             Authorization: `Bearer ${localStorage.getItem('token')}`
                         },
@@ -91,7 +91,7 @@ const UserDashboard = () => {
         try {
             const userId = localStorage.getItem('uid');
             if (userId && localStorage.getItem('token')) {
-                const res = await Axios.get("http://localhost:3000/ticket/getUserTicket", {
+                const res = await Axios.get("https://scrapster-api.vercel.app/ticket/getUserTicket", {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('token')}`
                     },
@@ -111,7 +111,7 @@ const UserDashboard = () => {
             const token = localStorage.getItem('token');
 
             if (userId && token && ticketId) {
-                const res = await Axios.delete(`http://localhost:3000/ticket/deleteTicket/${ticketId}`, {
+                const res = await Axios.delete(`https://scrapster-api.vercel.app/ticket/deleteTicket/${ticketId}`, {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }, params: { ticketId: ticketId }

@@ -34,7 +34,7 @@ const Ticketform = ({ closeModal }: { closeModal: () => void }) => {
     const handleSubmit = async (e: any) => {
         e.preventDefault();
         try {
-            await Axios.post('http://localhost:3000/ticket/create', {
+            await Axios.post('https://scrapster-api.vercel.app/ticket/create', {
                 userId : localStorage.getItem('uid'),
                 name: items.name,
                 email: items.email,
