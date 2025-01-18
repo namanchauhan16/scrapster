@@ -28,11 +28,11 @@ const Login = () => {
       const token = localStorage.getItem("token");
       const decoded: any = jwtDecode(token as string);
       if (decoded.role === "user") {
-        window.location.href = "/";
+        window.location.href = "https://scrapster-frontend.vercel.app/";
       } else if (decoded.role === "recycler") {
-        window.location.href = "/recyclerDashboard";
+        window.location.href = "https://scrapster-frontend.vercel.app/recyclerDashboard";
       } else if (decoded.role === "admin") {
-        window.location.href = "/";
+        window.location.href = "https://scrapster-frontend.vercel.app/";
       }
     } catch (err: any) {
       console.log(err);

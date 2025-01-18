@@ -63,8 +63,8 @@ const Registerpage = () => {
                 password: user.password,
                 role: user.role
             });
-            window.location.href = '/login';
             setAlert({ type: 'success', message: 'Registration successful!' });
+            window.location.href = 'https://scrapster-frontend.vercel.app/login';
         } catch (err: any) {
             console.log(err.response.data);
             setAlert({ type: 'error', message: err.response.data.message });
