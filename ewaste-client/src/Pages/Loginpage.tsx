@@ -28,9 +28,13 @@ const Login = () => {
       const token = localStorage.getItem("token");
       const decoded: any = jwtDecode(token as string);
       if (decoded.role === "user") {
+        setTimeout(() => {
         window.location.href = "/userDashboard";
+        }, 1000);
       } else if (decoded.role === "recycler") {
+        setTimeout(() => {
         window.location.href = "/recyclerDashboard";
+      }, 1000);
       } else if (decoded.role === "admin") {
         window.location.href = "/";
       }
