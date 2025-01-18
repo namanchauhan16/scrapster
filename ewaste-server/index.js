@@ -9,16 +9,15 @@ dotenv.config();
 dbconnect();
 const app = express();
 app.use(express.json());
-app.use(cors(
-  {
-    origin: ["https://scrapster-frontend.vercel.app"],
-    methods: ["POST", "GET", "PUT", "DELETE"],
-    credentials: true,
-    allowedHeaders: ['Content-Type', 'Authorization']
-  }
-));
+const corsOptions = {
+  origin: 'https://scrapster-frontend.vercel.app', // Your frontend URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow necessary HTTP methods
+  allowedHeaders: ['Content-Type', 'Authorization'], // Allow required headers
+};
 
-app.options('*', cors());
+app.use(cors(corsOptions));
+
+app.options('*', cors(corsOptions));
 
 app.get("/", (req, res) => {
   res.send("Hello World");
