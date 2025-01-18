@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "proxy":"https://scrapster-api.vercel.app",
   "scripts": {
     "dev": "vite --host",
     "build": "tsc -b && vite build",
